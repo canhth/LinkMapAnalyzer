@@ -134,7 +134,7 @@ void LinkMapAnalyzer::output() {
 	_int64 totalSize = 0;
 
 	// 按照大小顺序打印.o大小
-	cout << "[-] Object File Size : " << endl;
+	// cout << "[-] Object File Size : " << endl;
 	sort(objectFiles.begin(), objectFiles.end(), [&](const ObjectFile *a, const ObjectFile *b) {
 		return SymoblCountSize[a->fileNo] > SymoblCountSize[b->fileNo];
 	});
@@ -143,12 +143,11 @@ void LinkMapAnalyzer::output() {
 			totalSize += SymoblCountSize[file->fileNo];
 			objectModules[objectModulesMap[file->belongModule]]->moduleSize +=
 				SymoblCountSize[file->fileNo];
-			formatoutput(file->fileName, SymoblCountSize[file->fileNo] * 1.0 / 1024, "KB");
+			// formatoutput(file->fileName, SymoblCountSize[file->fileNo] * 1.0 / 1024, "KB");
 		}
 	});
 	// 按照大小顺序打印.a大小
-	cout << "\n\n\n"
-		 << "[-] Library File Size : " << endl;
+	cout << "[-] Library File Size : " << endl;
 	sort(
 		objectModules.begin(),
 		objectModules.end(),
