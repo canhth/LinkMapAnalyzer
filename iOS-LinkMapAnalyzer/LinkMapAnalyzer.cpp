@@ -146,6 +146,7 @@ void LinkMapAnalyzer::output() {
 			// formatoutput(file->fileName, SymoblCountSize[file->fileNo] * 1.0 / 1024, "KB");
 		}
 	});
+
 	// 按照大小顺序打印.a大小
 	cout << "[-] Library File Size : " << endl;
 	sort(
